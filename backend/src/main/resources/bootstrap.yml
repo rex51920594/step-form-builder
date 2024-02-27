@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+        uri: https://spring-cloud-config.azurewebsites.net/
+  application:
+    name: 'megaForm'
+  profiles:
+    active: dev
