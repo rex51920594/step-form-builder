@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.mageform.Model.Form;
+
 @Controller
 @RestController
 @RefreshScope
@@ -17,9 +19,17 @@ public class Hello {
     @Value("${test.text}")
     private String defaultPageTitle;
 
-	@GetMapping("/employees")
-	public String getAllEmployees(){
-		System.out.println(defaultPageTitle);
+	@GetMapping("/form-list-Info")
+	public Form getAllEmployees(){
+		Form form = new Form();
+		form.setId(1);
+		form.setAge(23);
+		form.setName("helloword");
+		return form;
+	}	
+
+	@GetMapping("/hello")
+	public String hello(){
 		return "hello";
 	}	
 }
